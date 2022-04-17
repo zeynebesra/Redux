@@ -4,9 +4,10 @@ Redux’la birlikte uygulamanız dahilinde hem veri yönetimini yapabilir hem de
 
 Immutability, react router, redux toolkit
 
-KONU ANLATIMI
+_KONU ANLATIMI_
 
 State management(Durum yönetimi) nedir?
+
 State , uygulamalarımızdaki bileşenlerin her birinin o anda sahip olduğu özellikler ve bilgilerdir. Bu özellik ve bilgilerin değişkenlik göstermesi state denen kavramı ortaya çıkarıyor. Örneğin bir checkbox’ın işaretli olup olmaması bir durumdur,bir bilgidir.
 
 Açık kaynak kodlu bir state management kütüphanesidir,neredeyse en çok kullanılanıdır.
@@ -25,18 +26,24 @@ _Store:_ State’in tutulduğu yerdir. Store’u oluşturmak için createStore f
 Geriye üç tane fonksiyon döner.
 
 -dispatch
+
 -getState
+
 -subscribe
 
-dispatch: Action’ı parametre alarak reducer’ı tetikler. Bunun sonucunda state değiştirilir. Bu fonksiyon her çalıştırıldığında abone olan tüm componen’tler tekrar render edilir.Tabii ki state değiştikten sonra ,render işlemi yapılır.
+_dispatch:_ Action’ı parametre alarak reducer’ı tetikler. Bunun sonucunda state değiştirilir. Bu fonksiyon her çalıştırıldığında abone olan tüm componen’tler tekrar render edilir.Tabii ki state değiştikten sonra ,render işlemi yapılır.
 
-getState: Mevcut state’i döner.
-subscribe: Component’ler bu fonksiyonu kullanarak Store’a abone olurlar. Store ,abone olan tüm componentleri içinde saklar. Parametre olarak ,component’in state’e bağlı olduğu, yani state her değiştiğinde render olacak fonksiyonu alır, bu fonksiyonun mutlaka getState fonksiyonunu kullanması önemlidir. Aslında buradaki amaç getState çalıştırmaktır. Bu sayede view’de, state’in değiştiğini görebiliriz. Aksi halde state değişir ama view’e bu yansımaz.
+_getState:_ Mevcut state’i döner.
+_subscribe:_ Component’ler bu fonksiyonu kullanarak Store’a abone olurlar. Store ,abone olan tüm componentleri içinde saklar. Parametre olarak ,component’in state’e bağlı olduğu, yani state her değiştiğinde render olacak fonksiyonu alır, bu fonksiyonun mutlaka getState fonksiyonunu kullanması önemlidir. Aslında buradaki amaç getState çalıştırmaktır. Bu sayede view’de, state’in değiştiğini görebiliriz. Aksi halde state değişir ama view’e bu yansımaz.
 
 _Çalışma Mantığı_
 
 1.Kullanıcı view’de ,action’u tetikleyecek bir işlem yapar.
+
 2.Dispatch, gelen action’ı store’da mevcut state ile birlikte reducer’a parametre geçer.
+
 3.Bu işlem sonucunda state’in ilgili kısımları değişir ve yeni bir state oluşur. Burada reducer için Object.assign() veya Object spread opretaor yöntemlerinin önemi anlaşılıyor ,eğer state birden fazla veri tutuyorsa.
+
 4.State güncellendiği gibi abone olan tüm component’ler tekrar render edilir.
+
 5.En sonunda bu state tekrar view’e yansır.
