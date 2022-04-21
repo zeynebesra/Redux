@@ -7,9 +7,9 @@ function Form() {
   const [title, setTitle] = useState("");
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
-    //console.log("test");
+    if (!title) return;
     e.preventDefault();
-    dispatch(addTodo({ id: nanoid(), title, completed: false }));
+    dispatch(addTodo({ title }));
     setTitle("");
   };
   return (
