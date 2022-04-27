@@ -1,0 +1,114 @@
+.container {
+  width: 700px;
+  height: 200px;
+  margin-top: 50px;
+  background-color: #fff;
+  box-shadow: 2px #ccc;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: start;
+  font-family: "Lucida Console";
+}
+
+.textArea {
+  width: 100%;
+  height: 150px;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  font-family: "Lucida Console";
+  background-color: rgb(255, 255, 255);
+  resize: none;
+  border: none;
+}
+
+.textArea:focus {
+  outline: none;
+}
+
+.inputContainer {
+  font-family: "Lucida Console";
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.radioCustom {
+  opacity: 0;
+  position: absolute;
+}
+
+.radioCustom,
+.radioCustomLabel {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+  background-color: white;
+}
+.radioCustomLabel {
+  position: relative;
+}
+
+.radioCustom + .radioCustomLabel:before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.radioCustom:checked + .radioCustomLabel:before {
+  content: "✔";
+}
+
+.inputBg {
+  background-color: white;
+}
+
+.submitButtonContainer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  outline: white;
+}
+
+.submitButton {
+  -webkit-text-size-adjust: 100%;
+  height: 20px;
+  width: 450px;
+  border-radius: 50px;
+  box-sizing: inherit;
+  font: inherit;
+  margin: 0;
+  text-transform: none;
+  -webkit-appearance: button;
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  transition: opacity 0s;
+  color: #fff !important;
+  box-shadow: none;
+  background-color: #059862 !important;
+}
+
+.submitButton:active {
+  opacity: 0.5;
+}
+
+.submitButton:hover {
+  color: #fff !important;
+  background-color: rgb(59, 150, 62) !important;
+}

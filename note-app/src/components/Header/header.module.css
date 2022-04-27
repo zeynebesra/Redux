@@ -1,0 +1,24 @@
+.input {
+  border: 1px solid #d0d0d0;
+  font-family: "Lucida Console";
+  box-sizing: border-box;
+  padding: 15px 15px;
+  background-color: white;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.button {
+  border: 1px solid #d0d0d0;
+  font-family: "Lucida Console";
+  box-sizing: border-box;
+  padding: 15px 15px;
+  background-color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-left: 5px;
+}
